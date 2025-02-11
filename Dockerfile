@@ -12,3 +12,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Set the entrypoint for the CLI script
 ENTRYPOINT ["python", "Cli.py"]
+
+
