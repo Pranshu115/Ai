@@ -7,7 +7,7 @@ import torch.nn as nn  # This import is not needed as you are not using PyTorch 
 import torch.optim as optim  # This import is not needed as you are not using PyTorch optimizers
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 
-def load_model(filename="/Users/sahinbegum/Downloads/docker/best_model.pkl"):
+def load_model(filename="best_model.pkl"):
     with open(filename, "rb") as f:
         data = pickle.load(f)
     return data["model"], data["scaler"]
@@ -40,14 +40,14 @@ def predict(model, scaler, filename):
     # ----> Use model.predict instead of model(X_tensor)
     predictions = model.predict(X_final)  
     
-    df['Medical Condition'] = predictions  # Add predictions to DataFrame
+    df['Test Results'] = predictions  # Add predictions to DataFrame
     
     # Return the predictions
-    return df['Medical Condition'] 
+    return df['Test Results'] 
 
 def main():
     # Provide the correct file path for your dataset
-    filename = "/Users/sahinbegum/Downloads/docker/healthcare_dataset.csv" 
+    filename = "healthcare_dataset.csv" 
     
     model, scaler = load_model()
     
