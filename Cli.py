@@ -55,7 +55,8 @@ def main():
     predictions = predict(model, scaler, filename)
     
     # Print or use the predictions 
-    print(predictions)  
+    print(predictions) 
+    print(predictions.value_counts())
     # or
     # print(predictions.head())  # To view the first few predictions
 
