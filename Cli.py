@@ -40,10 +40,10 @@ def predict(model, scaler, filename):
     # ----> Use model.predict instead of model(X_tensor)
     predictions = model.predict(X_final)  
     
-    df['Predicted Backorder'] = predictions  # Add predictions to DataFrame
+    df['Medical Condition'] = predictions  # Add predictions to DataFrame
     
     # Return the predictions
-    return df['Predicted Backorder'] 
+    return df['Medical Condition'] 
 
 def main():
     # Provide the correct file path for your dataset
