@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backorder Prediction</title>
+</head>
+<body>
+    <h2>Enter Details for Prediction</h2>
+    <form action="/predict" method="post">
+        <label>Age: <input type="text" name="Age"></label><br>
+        <label>Billing Amount: <input type="text" name="Billing Amount"></label><br>
+        <label>Gender: <input type="text" name="Gender"></label><br>
+        <label>Blood Type: <input type="text" name="Blood Type"></label><br>
+        <label>Medical Condition: <input type="text" name="Medical Condition"></label><br>
+        <label>Doctor: <input type="text" name="Doctor"></label><br>
+        <label>Hospital: <input type="text" name="Hospital"></label><br>
+        <label>Insurance Provider: <input type="text" name="Insurance Provider"></label><br>
+        <label>Admission Type: <input type="text" name="Admission Type"></label><br>
+        <label>Medication: <input type="text" name="Medication"></label><br>
+        <label>Room Number: <input type="text" name="Room Number"></label><br>
+        <input type="submit" value="Predict">
+    </form>
+    
+    {% if prediction is not none %}
+        <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+    
+    {% if error %}
+        <h3>Error: {{ error }}</h3>
+    {% endif %}
+</body>
+</html>
