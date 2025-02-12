@@ -2,9 +2,9 @@ import pickle
 import numpy as np
 import pandas as pd
 import argparse
-import torch  # This import is not needed as you are not using PyTorch tensors or operations
-import torch.nn as nn  # This import is not needed as you are not using PyTorch models
-import torch.optim as optim  # This import is not needed as you are not using PyTorch optimizers
+import torch  
+import torch.nn as nn  
+import torch.optim as optim  
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 
 def load_model(filename="best_model.pkl"):
@@ -13,7 +13,7 @@ def load_model(filename="best_model.pkl"):
     return data["model"], data["scaler"]
 
 def predict(model, scaler, filename):
-    # Load the CSV file with the specified path
+    
     df = pd.read_csv(filename, encoding='latin-1') 
     
     # ----> Select only the numerical and encoded categorical features used during training
